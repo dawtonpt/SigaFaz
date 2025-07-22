@@ -806,5 +806,27 @@
             showTab('tasks');
         });
     </script>
+ 
+<div id="startupModal" style="display:flex;align-items:center;justify-content:center;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.35);">
+  <div style="background:#fff;padding:2rem 2.5rem;border-radius:1rem;box-shadow:0 8px 32px rgba(0,0,0,0.18);max-width:90vw;text-align:center;">
+    <div style="font-size:1.15rem;margin-bottom:1.5rem;">
+      Tudo que adicionares aqui apenas fica guardado neste dispositivo
+    </div>
+    <button id="closeStartupModal" style="background:#2563eb;color:#fff;padding:0.7rem 2.2rem;border:none;border-radius:0.5rem;font-size:1rem;cursor:pointer;">
+      OK
+    </button>
+  </div>
+</div>
+
+<script>
+  // Show modal on load, close on button click
+  document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('startupModal');
+    const closeBtn = document.getElementById('closeStartupModal');
+    closeBtn.addEventListener('click', function() {
+      modal.style.display = 'none';
+    });
+  });
+</script>
 </body>
 </html>
